@@ -7,11 +7,11 @@ REQUEST_COUNT = Counter('app_requests_total', 'Total de peticiones a la aplicaci
 @app.route('/')
 def hello():
     REQUEST_COUNT.inc()
-    return "Aplicacion Flask funcionando con observabilidad"
+    return "¡Hola! Mi taller de observabilidad con Flask está activo"
 
 @app.route('/metrics')
 def metrics():
     return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8000)
